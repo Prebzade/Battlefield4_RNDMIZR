@@ -5,9 +5,15 @@ using namespace std;
 
 int main()
 {
+	string result;
+
 	cout << "BF4 Loadout RNDMIZER by Prebzade" << endl;
 
+	RNDMIZER_Classes_Categories getClass( classes[4], pickedLoadout);
+	RNDMIZER_Classes_Categories getWeaponCategory(RNDMIZER_Classes_Categories assaultWeaponCategories[4], RNDMIZER_Classes_Categories engineerWeaponCategories[4], const string supportWeaponCategories[4], RNDMIZER_Classes_Categories reconWeaponCategories[4], RNDMIZER_Classes_Categories pickedLoadout);
 
+	
+	RNDMIZER_Classes_Categories getPickedLoadout();
 
 	return 0;
 }
