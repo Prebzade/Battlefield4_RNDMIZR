@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RNDMIZER_Main.cpp">
+    <ClCompile Include="..\src\RNDMIZER_Classes_Categories.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="RNDMIZER_Classes_Categories.cpp">
+    <ClCompile Include="..\src\RNDMIZER_Main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="RNDMIZER_Classes_Categories.h">
+    <ClInclude Include="..\src\RNDMIZER_Classes_Categories.h">
       <Filter>Quelldateien</Filter>
     </ClInclude>
   </ItemGroup>
