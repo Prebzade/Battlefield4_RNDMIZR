@@ -1,10 +1,11 @@
 #include <random>
+#include <array>
 #include "RNDMIZER_Classes_Categories.h"
 
 string pickedLoadout;
 string clearPickedLoadout;
 string rerollItem;
-string classes[4] = { "Medic", "Engineer", "Support", "Recon" };
+string classes[4] = { "Assault", "Engineer", "Support", "Recon" };
 
 //Assault Specific
 string assaultWeaponCategories[4] = { "Assault Rifle", "Carbine", "DMR", "Shotgun" };
@@ -49,7 +50,7 @@ string movementMutator[8] = { "NO RUNNING", "NO CROUCHING", "NO JUMPING", "NOTHI
 
 void RNDMIZER_Classes_Categories::getClass()
 {
-	int switchChoice = getRandomNumber(sizeof(classes[4]));
+	int switchChoice = getRandomNumber(sizeof(classes[4])/sizeof(classes[0]));
 	switch(switchChoice) 
 	{
 	case 0: pickedLoadout.append(classes[switchChoice]); pickedLoadoutSpacer(); break;
@@ -64,7 +65,7 @@ void RNDMIZER_Classes_Categories::getWeaponCategory()
 {
 	if(pickedLoadout._Equal("Assault "))
 	{
-		int switchChoice = getRandomNumber(sizeof(assaultWeaponCategories[4]));
+		int switchChoice = getRandomNumber(sizeof(assaultWeaponCategories[4]) / sizeof(classes[0]));
 		switch (switchChoice) //Assault Main Weapon Selection
 		{
 		case 0: pickedLoadout.append(assaultWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
@@ -76,7 +77,7 @@ void RNDMIZER_Classes_Categories::getWeaponCategory()
 	}
 	else if (pickedLoadout._Equal("Engineer "))
 	{
-		int switchChoice = getRandomNumber(sizeof(engineerWeaponCategories[4]));
+		int switchChoice = getRandomNumber(sizeof(engineerWeaponCategories[4]) / sizeof(classes[0]));
 		switch (switchChoice) //Engineer Main Weapon Selection
 		{
 		case 0: pickedLoadout.append(engineerWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
@@ -88,7 +89,7 @@ void RNDMIZER_Classes_Categories::getWeaponCategory()
 	}
 	else if (pickedLoadout._Equal("Support "))
 	{
-		int switchChoice = getRandomNumber(sizeof(supportWeaponCategories[4]));
+		int switchChoice = getRandomNumber(sizeof(supportWeaponCategories[4]) / sizeof(classes[0]));
 		switch (switchChoice) //Support Main Weapon Selection
 		{
 		case 0: pickedLoadout.append(supportWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
@@ -100,7 +101,7 @@ void RNDMIZER_Classes_Categories::getWeaponCategory()
 	}
 	else if (pickedLoadout._Equal("Recon "))
 	{
-		int switchChoice = getRandomNumber(sizeof(reconWeaponCategories[4]));
+		int switchChoice = getRandomNumber(sizeof(reconWeaponCategories[4]) / sizeof(classes[0]));
 		switch (switchChoice) //Recon Main Weapon Selection
 		{
 		case 0: pickedLoadout.append(reconWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
@@ -118,18 +119,6 @@ int RNDMIZER_Classes_Categories::getRandomNumber(int arraySize)
 	default_random_engine drg(rd());
 	uniform_int_distribution<int> rndm(0, arraySize);
 	return rndm(drg);
-	/*int rndmNumber = 0;
-		if (arraySize == 0)
-		{
-			arraySize += 1;
-			rndmNumber = 1 + (rand() % (arraySize - 1 + 1));
-		}
-		else
-		{
-			rndmNumber = 1 + (rand() % (arraySize - 1 + 1));
-		}
-	return rndmNumber;
-	*/
 }
 
 void RNDMIZER_Classes_Categories::printPickedLoadout()
