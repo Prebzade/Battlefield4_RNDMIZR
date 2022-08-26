@@ -9,11 +9,16 @@ int main()
 	cout << "BF4 Loadout RNDMIZER by Prebzade" << endl;
 	
 	rndm.getClass();
-	rndm.getWeaponCategory();
-	
-	
+	rndm.getMainWeapon();
+	rndm.getSecondaryWeapon();
+	rndm.getGrenade();
+
+	rndm.printPickedLoadout();
+
+	/*
 	pickedLoadoutFinal = rndm.getPickedLoadout();
 	cout << "Dein Loadout: " << pickedLoadoutFinal << endl;
+	*/
 	return 0;
 }
 

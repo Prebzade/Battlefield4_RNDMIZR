@@ -5,9 +5,9 @@ using namespace std;
 
 class RNDMIZER_Classes_Categories
 {
-	//Functions
+	//Declarations & Functions
 public:
-	string pickedClass, pickedWeaponCategory, pickedWeapon, pickedSecondary, pickedGadget, pickedLoadout, clearPickedLoadout;
+	string pickedClass, pickedWeaponCategory, pickedMainWeapon, pickedSecondary,pickedGrenade, pickedGadget, pickedLoadout, clearPickedLoadout;
 	string pickedFieldUpgrades, pickedSoldierMutator, pickedattachmentMutator, pickedmovementMutator;
 	string rerollItem;
 
@@ -54,11 +54,10 @@ public:
 
 
 	void getClass();
-	void getWeaponCategory();
 	void getMainWeapon();
 	void getSecondaryWeapon();
-	void getGadgets();
 	void getGrenade();
+	void getGadgets();
 	void getFieldUpgrade();
 
 	int getRandomNumber(int arraySize);
