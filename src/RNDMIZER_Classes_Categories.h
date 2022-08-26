@@ -7,28 +7,30 @@ class RNDMIZER_Classes_Categories
 {
 	//Functions
 public:
-	void getClass(string* pickedLoadout);
-	void getWeaponCategory(string* pickedLoadout);
-	void getSecondaryWeapon(string* pickedLoadout, string* rerollItem);
-	void getGrenade(string* pickedLoadout);
+	void getClass();
+	void getWeaponCategory();
+	void getSecondaryWeapon();
+	void getGrenade();
 
-	void getAssaultWeapon(string* pickedLoadout, string* rerollItem);
-	void getAssaultGadgets(string* pickedLoadout, string* rerollItem);
-	void getAssaultFieldUpgrade(string* pickedLoadout);
+	void getAssaultWeapon();
+	void getAssaultGadgets();
+	void getAssaultFieldUpgrade();
 
-	void getEngineerWeapon(string* pickedLoadout, string* rerollItem);
-	void getEngineerGadgets(string* pickedLoadout, string* rerollItem);
-	void getEngineerFieldUpgrade(string* pickedLoadout);
+	void getEngineerWeapon();
+	void getEngineerGadgets();
+	void getEngineerFieldUpgrade();
 
-	void getSupportWeapon(string* pickedLoadout, string* rerollItem);
-	void getSupportGadgets(string* pickedLoadout, string* rerollItem);
-	void getSupportFieldUpgrade(string* pickedLoadout);
+	void getSupportWeapon();
+	void getSupportGadgets();
+	void getSupportFieldUpgrade();
 
-	void getReconWeapon(string* pickedLoadout, string* rerollItem);
-	void getReconGadgets(string* pickedLoadout, string* rerollItem);
-	void getReconFieldUpgrade(string* pickedLoadout);
+	void getReconWeapon();
+	void getReconGadgets();
+	void getReconFieldUpgrade();
 
 	int getRandomNumber(int arraySize);
-	string getPickedLoadout();
+	void printPickedLoadout();
 	void pickedLoadoutSpacer();
+	string getPickedLoadout();
+	string getRerolledItem();
 };
