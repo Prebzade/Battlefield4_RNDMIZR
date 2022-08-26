@@ -2,51 +2,11 @@
 #include <array>
 #include "RNDMIZER_Classes_Categories.h"
 
-string classes[4] = { "Assault", "Engineer", "Support", "Recon" };
-
-//Assault Specific
-string assaultWeaponCategories[4] = { "Assault Rifle", "Carbine", "DMR", "Shotgun" };
-string assaultRifles[16] = { "AK-12", "SCAR-H", "M416", "SAR-21", "AEK-971", "FAMAS", "AUG A3", "M16A4", "CZ-805", "QBZ-95-1", "ACE 23", "F2000", "L85A2", "AR160", "BULLDOG", "AN-94" };
-string assaultGadget[15] = { "No Gadget", "M320 HE", "M320 SMK", "M320 DART", "M320 FB", "M320 LVG", "M320 GL", "M26 MASS", "M26 DART", "M26 SLUG", "M26 FRAG", "FIRST AID PACK", "DEFIBRILLATOR", "MEDIC BAG", "DS-3 DECOY" };
-string assaultFieldUpgrades[5] = { "DEFENSIVE", "OFFENSIVE", "SHADOW", "COMBAT MEDIC", "GRENADIER" };
-string assaultMutator[5] = { "NO TEAMMATE HEAL", "NO HEALING AT ALL", "NO REVIVING RANDOMS", "DONT REVIVE AT ALL", "NOOB TUBE TIME" };
-
-//Engineer Specific
-string engineerWeaponCategories[4] = { "PDW", "Carbine", "DMR", "Shotgun" };
-string pdw[14] = { "MX4", "PP-2000", "UMP-45", "CBJ-MS", "PDW-R", "CZ-3A1", "JS2", "P90", "UMP-9", "AS VAL", "MP7", "SR-2", "MPX", "GROZA" };
-string engineerGadget[14] = { "No Gadget", "MBT LAW", "RPG-7V2", "MK153 SMAW", "FGM-148 JAVELIN", "FGM-172 SRAW", "FIM-92 STINGER", "SA-18 IGLA", "REPAIR TOOL", "M15 AT MINE", "M2 SLAM", "EOD BOT", "AA MINE", "DS-3 DECOY" };
-string engineerFieldUpgrades[5] = { "DEFENSIVE", "OFFENSIVE", "SHADOW", "ANTI TANK", "MECHANIC" };
-string engineerMutator[5] = { "AA MAIN", "AT MAIN", "EOD BOT MAIN", "NO REPAIRS", "ROCKETLAUNCHER MAIN" };
-
-//Support Specific
-string supportWeaponCategories[4] = { "LMG", "Carbine", "DMR", "Shotgun" };
-string lmg[13] = { "U-100 MK5", "TYPE 88 LMG", "LSAT", "PKP PECHENEG", "QBB-95-1", "M240B", "MG4", "M249", "RPK-12", "M60-E4", "RPK", "AWS", "L86A2" };
-string supportGadget[13] = { "No Gadget", "XM25 AIRBURST", "XM25 SMOKE", "XM25 DART", "AMMO PACK", "M18 CLAYMORE", "AMMO BOX", "M224 MORTAR", "MP-APS", "C4 EXPLOSIVE", "UCAV", "BALLISTIC SHIELD", "DS-3 DECOY" };
-string supportFieldUpgrades[5] = { "DEFENSIVE", "OFFENSIVE", "SHADOW", "INDIRECT FIRE", "PERIMETER DEFENSE" };
-string supportMutator[6] = { "NO AMMO FOR TEAMMATES", "NO AMMO AT ALL", "MORTARD", "UCAV MAIN", "DEMOLITION EYPERT", "BIPOD LMG FUN" };
-
-//Recon Specific
-string reconWeaponCategories[4] = { "Sniper Rifle", "Carbine", "DMR", "Shotgun" };
-string sniperRifle[13] = { "CS-LR4", "M40A5", "SCOUT ELITE", "SV-98", "JNG-90", "338-RECON", "M98B", "SRR-61", "FY-JS", "GOL MAGNUM", "L115", "SR338", "CS5" };
-string reconGadget[11] = { "No Gadget", "PLD", "C4 EXPLOSIVE", "MOTION SENSOR", "RADIO BEACON", "T-UGS", "SOFLAM", "MAV", "M18 CLAYMORE", "SUAV", "DS-3 DECOY" };
-string reconFieldUpgrades[5] = { "DEFENSIVE", "OFFENSIVE", "SHADOW", "SPEC OPS", "SNIPER" };
-string reconMutator[4] = { "NO SPAWN BEACON USAGE", "FORCE RECON", "MARK VEHICLES", "STEALTH OPS" };
-
-//Other Weapons & Throwables
-string secondaryWeapons[17] = { "P226", "M9", "QSZ-92", "MP443", "SHORTY 12G", "G18", "FN57", "M1911", "93R", "CZ-75", ".44 MAgnum", "COMPACT 45", "M412 REX", "SW40", "UNICA 6", "DEAGLE 44", "MARE´S LEG" };
-string carbine[13] = { "AK 5C", "ACWR", "SG553", "AKU-12", "A-91", "ACE 52 CQB", "G36C", "M4", "ACE 21 CQB", "TYPE-95B-1", "MTAR-21", "PHANTOM", "GROZA-1" };
-string dmr[8] = { "RFB", "MK11 MOD 0", "SKS", "SVD-12", "QBU-88", "M39 EMR", "ACE 23 SV", "SCAR-H SV" };
-string shotgun[9] = { "QBS-09", "870 MCS", "M1014", "HAWK 12G", "SAIGA 12K", "SPAS-12", "UTS 15", " SVB-12", "DAO-12" };
-string grenade[7] = { "M67 FRAG", "V40 MINI", "RGO IMPACT", "M34 INCINDIARY", "M18 SMOKE", "M84 FLASHBANG", "HAND FLARE" };
-
-//Mutators
-string attachementMutator[7] = { "NO ATTACHEMENTS", "SILENCER ONLY", "ONLY IRON SIGHT", "ONLY RED DOT", "SCOPE WITH HIGHEST MAGNIFICATION", "NO FOREGRIP", "NO SCOPE" };
-string movementMutator[8] = { "NO RUNNING", "NO CROUCHING", "NO JUMPING", "NOTHING",  "NO VAULTING", "ONLY CRAWLING", "ONLY CROUCHING", "NOTHING" };
-
+//Class selection
 void RNDMIZER_Classes_Categories::getClass()
 {
 	int switchChoice = getRandomNumber(sizeof(classes[4]) / sizeof(classes[0]));
-	switch(switchChoice) 
+	switch(switchChoice)
 	{
 	case 0: pickedClass.append(classes[switchChoice]); break;
 	case 1: pickedClass.append(classes[switchChoice]); break;
@@ -58,54 +18,171 @@ void RNDMIZER_Classes_Categories::getClass()
 
 void RNDMIZER_Classes_Categories::getWeaponCategory()
 {
-	if(pickedClass._Equal("Assault "))
+	//Assault Main Weapon Category Selection
+	if(pickedClass._Equal("Assault"))
 	{
 		int switchChoice = getRandomNumber(sizeof(assaultWeaponCategories[4]) / sizeof(assaultWeaponCategories[0]));
-		switch (switchChoice) //Assault Main Weapon Selection
+		switch (switchChoice)
 		{
 		case 0: pickedWeaponCategory.append(assaultWeaponCategories[switchChoice]); break;
 		case 1: pickedWeaponCategory.append(assaultWeaponCategories[switchChoice]); break;
 		case 2: pickedWeaponCategory.append(assaultWeaponCategories[switchChoice]); break;
 		case 3: pickedWeaponCategory.append(assaultWeaponCategories[switchChoice]); break;
-		default: cout << "Error during Assault Main Weapon Selection" << endl; break;
+		default: cout << "Error during Recon Main Weapon Categroy Selection" << endl; break;
 		}
 	}
-	else if (pickedClass._Equal("Engineer "))
+
+	//Engineer Main Weapon Category Selection
+	else if (pickedClass._Equal("Engineer"))
 	{
 		int switchChoice = getRandomNumber(sizeof(engineerWeaponCategories[4]) / sizeof(engineerWeaponCategories[0]));
-		switch (switchChoice) //Engineer Main Weapon Selection
+		switch (switchChoice) 
 		{
 		case 0: pickedWeaponCategory.append(engineerWeaponCategories[switchChoice]); break;
 		case 1: pickedWeaponCategory.append(engineerWeaponCategories[switchChoice]); break;
 		case 2: pickedWeaponCategory.append(engineerWeaponCategories[switchChoice]); break;
 		case 3: pickedWeaponCategory.append(engineerWeaponCategories[switchChoice]); break;
-		default: cout << "Error during Engineer Main Weapon Selection" << endl; break;
+		default: cout << "Error during Recon Main Weapon Categroy Selection" << endl; break;
 		}
 	}
-	else if (pickedClass._Equal("Support "))
+
+	//Support Main Weapon Category Selection
+	else if (pickedClass._Equal("Support"))
 	{
 		int switchChoice = getRandomNumber(sizeof(supportWeaponCategories[4]) / sizeof(supportWeaponCategories[0]));
-		switch (switchChoice) //Support Main Weapon Selection
+		switch (switchChoice) 
 		{
 		case 0: pickedWeaponCategory.append(supportWeaponCategories[switchChoice]); break;
 		case 1: pickedWeaponCategory.append(supportWeaponCategories[switchChoice]); break;
 		case 2: pickedWeaponCategory.append(supportWeaponCategories[switchChoice]); break;
 		case 3: pickedWeaponCategory.append(supportWeaponCategories[switchChoice]); break;
-		default: cout << "Error during Support Main Weapon Selection" << endl; break;
+		default: cout << "Error during Recon Main Weapon Categroy Selection" << endl; break;
 		}
 	}
-	else if (pickedClass._Equal("Recon "))
+
+	//Recon Main Weapon Category Selection
+	else if (pickedClass._Equal("Recon"))
 	{
 		int switchChoice = getRandomNumber(sizeof(reconWeaponCategories[4]) / sizeof(reconWeaponCategories[0]));
-		switch (switchChoice) //Recon Main Weapon Selection
+		switch (switchChoice) 
 		{
 		case 0: pickedWeaponCategory.append(reconWeaponCategories[switchChoice]); break;
 		case 1: pickedWeaponCategory.append(reconWeaponCategories[switchChoice]); break;
 		case 2: pickedWeaponCategory.append(reconWeaponCategories[switchChoice]); break;
 		case 3: pickedWeaponCategory.append(reconWeaponCategories[switchChoice]); break;
+		default: cout << "Error during Recon Main Weapon Categroy Selection" << endl; break;
+		}
+	}
+}
+
+void RNDMIZER_Classes_Categories::getMainWeapon()
+{
+	//Assault Main Weapon Selection
+	if (pickedClass._Equal("Assault"))
+	{
+		int switchChoice = getRandomNumber(sizeof(assaultWeaponCategories[4]) / sizeof(assaultWeaponCategories[0]));
+		switch (switchChoice)
+		{
+		case 0: assaultWeaponCategories[switchChoice]; 
+			int switchWeaponChoice = getRandomNumber(sizeof(assaultRifles[16]) / sizeof(assaultRifles[0]));
+			pickedWeapon.append(assaultRifles[switchWeaponChoice]); break;
+
+		case 1: assaultWeaponCategories[switchChoice];
+			int switchWeaponChoice = getRandomNumber(sizeof(carbine[13]) / sizeof(carbine[0]));
+			pickedWeapon.append(carbine[switchWeaponChoice]); break;
+
+		case 2: assaultWeaponCategories[switchChoice]; 
+			int switchWeaponChoice = getRandomNumber(sizeof(dmr[8]) / sizeof(dmr[0]));
+			pickedWeapon.append(dmr[switchWeaponChoice]); break;
+
+		case 3: assaultWeaponCategories[switchChoice]; 
+			int switchWeaponChoice = getRandomNumber(sizeof(shotgun[9]) / sizeof(shotgun[0]));
+			pickedWeapon.append(shotgun[switchWeaponChoice]); break;
+		default: cout << "Error during Assault Main Weapon Selection" << endl; break;
+		}
+	}
+
+	//Engineer Main Weapon Selection
+	else if (pickedClass._Equal("Engineer"))
+	{
+		int switchChoice = getRandomNumber(sizeof(engineerWeaponCategories[4]) / sizeof(engineerWeaponCategories[0]));
+		switch (switchChoice)
+		{
+		case 0: engineerWeaponCategories[switchChoice];
+			int switchWeaponChoice = getRandomNumber(sizeof(pdw[14]) / sizeof(pdw[0]));
+			pickedWeapon.append(pdw[switchWeaponChoice]); break;
+
+		case 1: engineerWeaponCategories[switchChoice];
+			int switchWeaponChoice = getRandomNumber(sizeof(carbine[13]) / sizeof(carbine[0]));
+			pickedWeapon.append(carbine[switchWeaponChoice]); break;
+
+		case 2: engineerWeaponCategories[switchChoice];
+			int switchWeaponChoice = getRandomNumber(sizeof(dmr[8]) / sizeof(dmr[0]));
+			pickedWeapon.append(dmr[switchWeaponChoice]); break;
+
+		case 3: engineerWeaponCategories[switchChoice];
+			int switchWeaponChoice = getRandomNumber(sizeof(shotgun[9]) / sizeof(shotgun[0]));
+			pickedWeapon.append(shotgun[switchWeaponChoice]); break;
+		default: cout << "Error during Engineer Main Weapon Selection" << endl; break;
+		}
+	}
+
+	//Engineer Main Weapon Selection
+	else if (pickedClass._Equal("Support"))
+	{
+		int switchChoice = getRandomNumber(sizeof(supportWeaponCategories[4]) / sizeof(supportWeaponCategories[0]));
+		switch (switchChoice)
+		{
+		case 0: supportWeaponCategories[switchChoice];
+			int switchWeaponChoice = getRandomNumber(sizeof(lmg[13]) / sizeof(lmg[0]));
+			pickedWeapon.append(lmg[switchWeaponChoice]); break;
+
+		case 1: supportWeaponCategories[switchChoice];
+			int switchWeaponChoice = getRandomNumber(sizeof(carbine[13]) / sizeof(carbine[0]));
+			pickedWeapon.append(carbine[switchWeaponChoice]); break;
+
+		case 2: supportWeaponCategories[switchChoice];
+			int switchWeaponChoice = getRandomNumber(sizeof(dmr[8]) / sizeof(dmr[0]));
+			pickedWeapon.append(dmr[switchWeaponChoice]); break;
+
+		case 3: supportWeaponCategories[switchChoice];
+			int switchWeaponChoice = getRandomNumber(sizeof(shotgun[9]) / sizeof(shotgun[0]));
+			pickedWeapon.append(shotgun[switchWeaponChoice]); break;
+		default: cout << "Error during Support Main Weapon Selection" << endl; break;
+		}
+	}
+
+	//Engineer Main Weapon Selection
+	else if (pickedClass._Equal("Recon"))
+	{
+		int switchChoice = getRandomNumber(sizeof(reconWeaponCategories[4]) / sizeof(reconWeaponCategories[0]));
+		switch (switchChoice)
+		{
+		case 0: reconWeaponCategories[switchChoice];
+			int switchWeaponChoice = getRandomNumber(sizeof(sniperRifle[13]) / sizeof(sniperRifle[0]));
+			pickedWeapon.append(sniperRifle[switchWeaponChoice]); break;
+
+		case 1: reconWeaponCategories[switchChoice];
+			int switchWeaponChoice = getRandomNumber(sizeof(carbine[13]) / sizeof(carbine[0]));
+			pickedWeapon.append(carbine[switchWeaponChoice]); break;
+
+		case 2: reconWeaponCategories[switchChoice];
+			int switchWeaponChoice = getRandomNumber(sizeof(dmr[8]) / sizeof(dmr[0]));
+			pickedWeapon.append(dmr[switchWeaponChoice]); break;
+
+		case 3: reconWeaponCategories[switchChoice];
+			int switchWeaponChoice = getRandomNumber(sizeof(shotgun[9]) / sizeof(shotgun[0]));
+			pickedWeapon.append(shotgun[switchWeaponChoice]); break;
 		default: cout << "Error during Recon Main Weapon Selection" << endl; break;
 		}
 	}
+}
+
+//Secondary Weapon Selection
+void RNDMIZER_Classes_Categories::getSecondaryWeapon() 
+{
+	int Choice = getRandomNumber(sizeof(secondaryWeapons[17]) / sizeof(secondaryWeapons[0]));
+	pickedSecondary.append(secondaryWeapons[Choice]);
 }
 
 int RNDMIZER_Classes_Categories::getRandomNumber(int arraySize)
