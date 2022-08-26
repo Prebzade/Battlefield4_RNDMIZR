@@ -7,26 +7,17 @@ class RNDMIZER_Classes_Categories
 {
 	//Functions
 public:
+	string pickedClass, pickedWeaponCategory, pickedWeapon, pickedGadget, pickedLoadout, clearPickedLoadout;
+	string pickedFieldUpgrades, pickedSoldierMutator, pickedattachmentMutator, pickedmovementMutator;
+	string rerollItem;
+
 	void getClass();
 	void getWeaponCategory();
+	void getMainWeapon();
 	void getSecondaryWeapon();
+	void getGadgets();
 	void getGrenade();
-
-	void getAssaultWeapon();
-	void getAssaultGadgets();
-	void getAssaultFieldUpgrade();
-
-	void getEngineerWeapon();
-	void getEngineerGadgets();
-	void getEngineerFieldUpgrade();
-
-	void getSupportWeapon();
-	void getSupportGadgets();
-	void getSupportFieldUpgrade();
-
-	void getReconWeapon();
-	void getReconGadgets();
-	void getReconFieldUpgrade();
+	void getFieldUpgrade();
 
 	int getRandomNumber(int arraySize);
 	void printPickedLoadout();

@@ -2,9 +2,6 @@
 #include <array>
 #include "RNDMIZER_Classes_Categories.h"
 
-string pickedLoadout;
-string clearPickedLoadout;
-string rerollItem;
 string classes[4] = { "Assault", "Engineer", "Support", "Recon" };
 
 //Assault Specific
@@ -46,69 +43,67 @@ string grenade[7] = { "M67 FRAG", "V40 MINI", "RGO IMPACT", "M34 INCINDIARY", "M
 string attachementMutator[7] = { "NO ATTACHEMENTS", "SILENCER ONLY", "ONLY IRON SIGHT", "ONLY RED DOT", "SCOPE WITH HIGHEST MAGNIFICATION", "NO FOREGRIP", "NO SCOPE" };
 string movementMutator[8] = { "NO RUNNING", "NO CROUCHING", "NO JUMPING", "NOTHING",  "NO VAULTING", "ONLY CRAWLING", "ONLY CROUCHING", "NOTHING" };
 
-
-
 void RNDMIZER_Classes_Categories::getClass()
 {
-	int switchChoice = getRandomNumber(sizeof(classes[4])/sizeof(classes[0]));
+	int switchChoice = getRandomNumber(sizeof(classes[4]) / sizeof(classes[0]));
 	switch(switchChoice) 
 	{
-	case 0: pickedLoadout.append(classes[switchChoice]); pickedLoadoutSpacer(); break;
-	case 1: pickedLoadout.append(classes[switchChoice]); pickedLoadoutSpacer(); break;
-	case 2: pickedLoadout.append(classes[switchChoice]); pickedLoadoutSpacer(); break;
-	case 3: pickedLoadout.append(classes[switchChoice]); pickedLoadoutSpacer(); break;
-	default: cout << "Error during Class Selection" << endl; pickedLoadoutSpacer(); break;
+	case 0: pickedClass.append(classes[switchChoice]); break;
+	case 1: pickedClass.append(classes[switchChoice]); break;
+	case 2: pickedClass.append(classes[switchChoice]); break;
+	case 3: pickedClass.append(classes[switchChoice]); break;
+	default: cout << "Error during Class Selection" << endl; break;
 	}
 }
 
 void RNDMIZER_Classes_Categories::getWeaponCategory()
 {
-	if(pickedLoadout._Equal("Assault "))
+	if(pickedClass._Equal("Assault "))
 	{
-		int switchChoice = getRandomNumber(sizeof(assaultWeaponCategories[4]) / sizeof(classes[0]));
+		int switchChoice = getRandomNumber(sizeof(assaultWeaponCategories[4]) / sizeof(assaultWeaponCategories[0]));
 		switch (switchChoice) //Assault Main Weapon Selection
 		{
-		case 0: pickedLoadout.append(assaultWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		case 1: pickedLoadout.append(assaultWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		case 2: pickedLoadout.append(assaultWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		case 3: pickedLoadout.append(assaultWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		default: cout << "Error during Assault Main Weapon Selection" << endl; pickedLoadoutSpacer(); break;
+		case 0: pickedWeaponCategory.append(assaultWeaponCategories[switchChoice]); break;
+		case 1: pickedWeaponCategory.append(assaultWeaponCategories[switchChoice]); break;
+		case 2: pickedWeaponCategory.append(assaultWeaponCategories[switchChoice]); break;
+		case 3: pickedWeaponCategory.append(assaultWeaponCategories[switchChoice]); break;
+		default: cout << "Error during Assault Main Weapon Selection" << endl; break;
 		}
 	}
-	else if (pickedLoadout._Equal("Engineer "))
+	else if (pickedClass._Equal("Engineer "))
 	{
-		int switchChoice = getRandomNumber(sizeof(engineerWeaponCategories[4]) / sizeof(classes[0]));
+		int switchChoice = getRandomNumber(sizeof(engineerWeaponCategories[4]) / sizeof(engineerWeaponCategories[0]));
 		switch (switchChoice) //Engineer Main Weapon Selection
 		{
-		case 0: pickedLoadout.append(engineerWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		case 1: pickedLoadout.append(engineerWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		case 2: pickedLoadout.append(engineerWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		case 3: pickedLoadout.append(engineerWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		default: cout << "Error during Engineer Main Weapon Selection" << endl; pickedLoadoutSpacer(); break;
+		case 0: pickedWeaponCategory.append(engineerWeaponCategories[switchChoice]); break;
+		case 1: pickedWeaponCategory.append(engineerWeaponCategories[switchChoice]); break;
+		case 2: pickedWeaponCategory.append(engineerWeaponCategories[switchChoice]); break;
+		case 3: pickedWeaponCategory.append(engineerWeaponCategories[switchChoice]); break;
+		default: cout << "Error during Engineer Main Weapon Selection" << endl; break;
 		}
 	}
-	else if (pickedLoadout._Equal("Support "))
+	else if (pickedClass._Equal("Support "))
 	{
-		int switchChoice = getRandomNumber(sizeof(supportWeaponCategories[4]) / sizeof(classes[0]));
+		int switchChoice = getRandomNumber(sizeof(supportWeaponCategories[4]) / sizeof(supportWeaponCategories[0]));
 		switch (switchChoice) //Support Main Weapon Selection
 		{
-		case 0: pickedLoadout.append(supportWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		case 1: pickedLoadout.append(supportWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		case 2: pickedLoadout.append(supportWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		case 3: pickedLoadout.append(supportWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		default: cout << "Error during Support Main Weapon Selection" << endl; pickedLoadoutSpacer(); break;
+		case 0: pickedWeaponCategory.append(supportWeaponCategories[switchChoice]); break;
+		case 1: pickedWeaponCategory.append(supportWeaponCategories[switchChoice]); break;
+		case 2: pickedWeaponCategory.append(supportWeaponCategories[switchChoice]); break;
+		case 3: pickedWeaponCategory.append(supportWeaponCategories[switchChoice]); break;
+		default: cout << "Error during Support Main Weapon Selection" << endl; break;
 		}
 	}
-	else if (pickedLoadout._Equal("Recon "))
+	else if (pickedClass._Equal("Recon "))
 	{
-		int switchChoice = getRandomNumber(sizeof(reconWeaponCategories[4]) / sizeof(classes[0]));
+		int switchChoice = getRandomNumber(sizeof(reconWeaponCategories[4]) / sizeof(reconWeaponCategories[0]));
 		switch (switchChoice) //Recon Main Weapon Selection
 		{
-		case 0: pickedLoadout.append(reconWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		case 1: pickedLoadout.append(reconWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		case 2: pickedLoadout.append(reconWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		case 3: pickedLoadout.append(reconWeaponCategories[switchChoice]); pickedLoadoutSpacer(); break;
-		default: cout << "Error during Recon Main Weapon Selection" << endl; pickedLoadoutSpacer(); break;
+		case 0: pickedWeaponCategory.append(reconWeaponCategories[switchChoice]); break;
+		case 1: pickedWeaponCategory.append(reconWeaponCategories[switchChoice]); break;
+		case 2: pickedWeaponCategory.append(reconWeaponCategories[switchChoice]); break;
+		case 3: pickedWeaponCategory.append(reconWeaponCategories[switchChoice]); break;
+		default: cout << "Error during Recon Main Weapon Selection" << endl; break;
 		}
 	}
 }
