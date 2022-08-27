@@ -12,6 +12,7 @@ int main()
 	rndm.getMainWeapon();
 	rndm.getSecondaryWeapon();
 	rndm.getGrenade();
+	rndm.getGadgets();
 
 	rndm.printPickedLoadout();
 
