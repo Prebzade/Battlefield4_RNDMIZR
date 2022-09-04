@@ -3,20 +3,17 @@
 
 using namespace std;
 
+
 class RNDMIZER_Classes_Categories
 {
 	//Declarations & Functions
 protected:
-	string pickedClass, pickedWeaponCategory, pickedMainWeapon, pickedSecondary,pickedGrenade, pickedGadgetSlot1, pickedGadgetSlot2, pickedLoadout, clearPickedLoadout;
-	string pickedFieldUpgrades, pickedSoldierMutator, pickedattachmentMutator, pickedmovementMutator;
-	//string rerollItem;
-
-	string pickedClassFinal, pickedWeaponCategoryFinal, pickedMainWeaponFinal, pickedSecondaryFinal, pickedGrenadeFinal, pickedGadgetSlot1Final, pickedGadgetSlot2Final, pickedLoadoutFinal, clearPickedLoadoutFinal;
-	string pickedFieldUpgradesFinal, pickedSoldierMutatorFinal, pickedattachmentMutatorFinal, pickedmovementMutatorFinal;
+	string pickedClass, pickedWeaponCategory, pickedMainWeapon, pickedSecondary,pickedGrenade, pickedGadgetSlot1, pickedGadgetSlot2, pickedLoadout;
+	string pickedFieldUpgrade, pickedSoldierMutator, pickedAttachmentMutator, pickedMovementMutator;
 
 	string classes[4] = { "Assault", "Engineer", "Support", "Recon" };
 
-	int switchClassChoice, switchCategoryChoice, switchWeaponChoice, secondaryChoice, grenadeChoice, switchGadgetChoice1, switchGadgetChoice2;
+	int switchClassChoice = 0, switchCategoryChoice = 0, switchWeaponChoice = 0, secondaryChoice = 0, grenadeChoice = 0, switchGadgetChoice1 = 0, switchGadgetChoice2 = 0, switchFieldUpgrade = 0, switchSoldierMutator = 0, switchAttachmentMutator = 0, switchMovementMutator = 0;
 
 	//Assault Specific
 	string assaultWeaponCategories[4] = { "Assault Rifle", "Carbine", "DMR", "Shotgun" };
@@ -64,8 +61,10 @@ public:
 	void getGrenade();
 	void getGadgets();
 	void getFieldUpgrade();
+	void getMutators(int difficulty);
 	int getRandomNumber(int arraySize);
 	int getRandomNumber(int minSize, int maxSize);
 	void printPickedLoadout();
+	void printPickedLoadout(int difficulty);
 	void rerollItem(int switchItem);
 };

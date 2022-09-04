@@ -19,7 +19,7 @@ void RNDMIZER_Classes_Categories::getClass()
 void RNDMIZER_Classes_Categories::getMainWeapon()
 {
 	//Assault Main Weapon Selection
-	if /* (pickedClass._Equal("Assault")) */(pickedClass._Equal(classes[0]))
+	if (pickedClass._Equal(classes[0]))
 	{
 		switchCategoryChoice = getRandomNumber(size(assaultWeaponCategories));
 		switch (switchCategoryChoice)
@@ -265,6 +265,99 @@ void RNDMIZER_Classes_Categories::getGadgets()
 	}
 }
 
+//Field Upgrade Selection
+void RNDMIZER_Classes_Categories::getFieldUpgrade()
+{
+	if (pickedClass._Equal(classes[0]))
+	{
+		switchFieldUpgrade = getRandomNumber(size(assaultFieldUpgrades));
+		pickedFieldUpgrade = assaultFieldUpgrades[switchFieldUpgrade];
+	}
+	if (pickedClass._Equal(classes[1]))
+	{
+		switchFieldUpgrade = getRandomNumber(size(engineerFieldUpgrades));
+		pickedFieldUpgrade = engineerFieldUpgrades[switchFieldUpgrade];
+	}
+	if (pickedClass._Equal(classes[2]))
+	{
+		switchFieldUpgrade = getRandomNumber(size(supportFieldUpgrades));
+		pickedFieldUpgrade = supportFieldUpgrades[switchFieldUpgrade];
+	}
+	if (pickedClass._Equal(classes[3]))
+	{
+		switchFieldUpgrade = getRandomNumber(size(reconFieldUpgrades));
+		pickedFieldUpgrade = reconFieldUpgrades[switchFieldUpgrade];
+	}
+}
+
+//Mutator Selection
+void RNDMIZER_Classes_Categories::getMutators(int difficulty)
+{
+	if (difficulty == 2)
+	{
+		if (pickedClass._Equal(classes[0]))
+		{
+			switchSoldierMutator = getRandomNumber(size(assaultMutator));
+			pickedSoldierMutator = assaultMutator[switchSoldierMutator];
+		}
+		if (pickedClass._Equal(classes[1]))
+		{
+			switchSoldierMutator = getRandomNumber(size(engineerMutator));
+			pickedSoldierMutator = engineerMutator[switchSoldierMutator];
+		}
+		if (pickedClass._Equal(classes[2]))
+		{
+			switchSoldierMutator = getRandomNumber(size(supportMutator));
+			pickedSoldierMutator = supportMutator[switchSoldierMutator];
+		}
+		if (pickedClass._Equal(classes[3]))
+		{
+			switchSoldierMutator = getRandomNumber(size(reconMutator));
+			pickedSoldierMutator = reconMutator[switchSoldierMutator];
+		}
+	}
+
+	if (difficulty == 3)
+	{
+		if (pickedClass._Equal(classes[0]))
+		{
+			switchSoldierMutator = getRandomNumber(size(assaultMutator));
+			switchAttachmentMutator = getRandomNumber(size(attachementMutator));
+			switchMovementMutator = getRandomNumber(size(movementMutator));
+			pickedSoldierMutator = assaultMutator[switchSoldierMutator];
+			pickedAttachmentMutator = attachementMutator[switchAttachmentMutator];
+			pickedMovementMutator = movementMutator[switchMovementMutator];
+		}
+		if (pickedClass._Equal(classes[1]))
+		{
+			switchSoldierMutator = getRandomNumber(size(engineerMutator));
+			switchAttachmentMutator = getRandomNumber(size(attachementMutator));
+			switchMovementMutator = getRandomNumber(size(movementMutator));
+			pickedSoldierMutator = engineerMutator[switchSoldierMutator];
+			pickedAttachmentMutator = attachementMutator[switchAttachmentMutator];
+			pickedMovementMutator = movementMutator[switchMovementMutator];
+		}
+		if (pickedClass._Equal(classes[2]))
+		{
+			switchSoldierMutator = getRandomNumber(size(supportMutator));
+			switchAttachmentMutator = getRandomNumber(size(attachementMutator));
+			switchMovementMutator = getRandomNumber(size(movementMutator));
+			pickedSoldierMutator = supportMutator[switchSoldierMutator];
+			pickedAttachmentMutator = attachementMutator[switchAttachmentMutator];
+			pickedMovementMutator = movementMutator[switchMovementMutator];
+		}
+		if (pickedClass._Equal(classes[3]))
+		{
+			switchSoldierMutator = getRandomNumber(size(reconMutator));
+			switchAttachmentMutator = getRandomNumber(size(attachementMutator));
+			switchMovementMutator = getRandomNumber(size(movementMutator));
+			pickedSoldierMutator = reconMutator[switchSoldierMutator];
+			pickedAttachmentMutator = attachementMutator[switchAttachmentMutator];
+			pickedMovementMutator = movementMutator[switchMovementMutator];
+		}
+	}
+}
+
 //Item Reroll
 void RNDMIZER_Classes_Categories::rerollItem(int switchItem)
 {
@@ -399,9 +492,10 @@ int RNDMIZER_Classes_Categories::getRandomNumber(int minSize, int maxSize)
 	return rndm(drg);
 }
 
+//Softcore Loadout
 void RNDMIZER_Classes_Categories::printPickedLoadout()
 {
-	//cout << pickedClass << " \t " << pickedWeaponCategory << " \t " << pickedMainWeapon << " \t " << pickedSecondary << " \t " << pickedGrenade << " \ " << pickedGadgetSlot1 << " \t " << pickedGadgetSlot2 << endl;
+	cout << "<----------->" << endl;
 	cout << "Class: " << pickedClass << endl; 
 	cout << "Main Weapon Category: " << pickedWeaponCategory << endl;
 	cout << "Main Weapon: " << pickedMainWeapon << endl; 
@@ -409,5 +503,33 @@ void RNDMIZER_Classes_Categories::printPickedLoadout()
 	cout << "Grenade: " << pickedGrenade << endl;
 	cout << "Gadget One: " << pickedGadgetSlot1 << endl; 
 	cout << "Gadget Two: " << pickedGadgetSlot2 << endl;
-	//Mutators missing
+	cout << "Field Upgrade: " << pickedFieldUpgrade << endl;
+	cout << "<----------->" << endl;
+}
+
+//Hardcore Loadout
+void RNDMIZER_Classes_Categories::printPickedLoadout(int difficulty)
+{
+	cout << "<----------->" << endl;
+	cout << "Class: " << pickedClass << endl;
+	cout << "Main Weapon Category: " << pickedWeaponCategory << endl;
+	cout << "Main Weapon: " << pickedMainWeapon << endl;
+	cout << "Secondary: " << pickedSecondary << endl;
+	cout << "Grenade: " << pickedGrenade << endl;
+	cout << "Gadget One: " << pickedGadgetSlot1 << endl;
+	cout << "Gadget Two: " << pickedGadgetSlot2 << endl;
+	cout << "Field Upgrade: " << pickedFieldUpgrade << endl;
+	cout << "<----------->" << endl;
+	if (difficulty == 2)
+	{
+		cout << "Class Mutator: " << pickedSoldierMutator << endl;
+		cout << "<----------->" << endl;
+	}
+	else if (difficulty == 3)
+	{
+		cout << "Class Mutator: " << pickedSoldierMutator << endl;
+		cout << "Attachment Mutator: " << pickedAttachmentMutator << endl;
+		cout << "Movement Mutator: " << pickedMovementMutator << endl;
+		cout << "<----------->" << endl;
+	}
 }
