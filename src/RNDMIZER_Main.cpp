@@ -1,15 +1,23 @@
 #include "RNDMIZER_Classes_Categories.h"
 #include <stdlib.h>
 
+void pickDifficulty();
 void pickLoadoutSoftcore(RNDMIZER_Classes_Categories rndm);
 void pickLoadoutIntermediate(RNDMIZER_Classes_Categories rndm);
 void pickLoadoutHardcore(RNDMIZER_Classes_Categories rndm);
 
 int main()
 {
+	pickDifficulty();
+
+	return 0;
+}
+
+void pickDifficulty()
+{
 	int difficulty = 0;
 	RNDMIZER_Classes_Categories rndm;
-	
+
 	cout << "Welcome to the BF4 Loadout Randomizer by Prebzade" << endl;
 	cout << "How hard you you want it to be?" << endl;
 	cout << "1 = Softcore " << "\t" << " 2 = Intermediate " << "\t" << " 3 = Hardcore" << endl;
@@ -22,14 +30,12 @@ int main()
 	case 3: pickLoadoutHardcore(rndm); break;
 	default: break;
 	}
-
-	return 0;
 }
 
 void pickLoadoutSoftcore(RNDMIZER_Classes_Categories rndm)
 {
 	string repeat;
-	int switchItem = 0;
+	int switchItem;
 
 	do
 	{
@@ -39,7 +45,7 @@ void pickLoadoutSoftcore(RNDMIZER_Classes_Categories rndm)
 		rndm.getGrenade();
 		rndm.getGadgets();
 		rndm.getFieldUpgrade();
-		switchItem;
+		switchItem = 0;
 
 		while (switchItem != 6)
 		{
@@ -212,27 +218,3 @@ void pickLoadoutHardcore(RNDMIZER_Classes_Categories rndm)
 		}
 	} while (repeat._Equal("Y") || repeat._Equal("y"));
 }
-/*
-String Arrays:	Klassen, Gadget, Weapon, Secondary, Grenade
-				Camo Array? Knife Array? Perk Array?
-
-Nicht jedes Gadget ist miteinander kompatibel
-Arrays for Normal Equipment only and all Equipment(Unlockable+DLC) (USer abfrage)
-Wenn Equipment/Weapon X nicht verfügbar, reroll (User abfrage)
-Nach ablauf, nochmal ausführen mit abfrage
-Wahl ob klasse ausgewählt wird, dannach wahl für Weaponcategory
-clear screen nach jedem neuen programm start
-Mutator (Movement, Attachments, no grenades, no Equipment/Gadget)
-
-Attachment Mutators: No Attachments, Silencer only, No Scope, Only RedDot, Only Highest Scope available, No Grip
-Movement Mutators: No running, No crouching, no Jumping, no vaulting, only Bunnyhopping, only crawling, only crouching, Normal and just play
-Silencer only -> Every Weapon must have a silencer
-Other Mutators: Take Enemy Loadout of your kill, Knife Only, Pistol Only, Main Weapon Only, No Grenades, Grenades only,
-
-Class Specific Mutators:    Medic -> No Healing, No Revive, M320HE Main,
-							Engineer -> AA main, Anti Tank Main (RPG), No Repairing, Kill with torch, Kill with EOD-Bot
-							Support -> No Ammo pouches, No Ammo Boxes, Mortar only, Anti Tank Main (C4), Ballistic-Shield only, UCAV Main
-							Recon -> No Respawn Beacon, Only Headshots, Snipers with Reddots, No Spotting
-
-Idee: Aus mehreren String Arrays einen String produzieren mit dem Loadout.
-*/
