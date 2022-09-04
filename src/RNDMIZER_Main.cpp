@@ -1,21 +1,82 @@
-#include <iostream>
 #include "RNDMIZER_Classes_Categories.h"
+#include <stdlib.h>
 
-using namespace std;
+void pickLoadout(RNDMIZER_Classes_Categories rndm);
+void pickLoadoutWithMutators(RNDMIZER_Classes_Categories rndm);
 
 int main()
 {
 	string result;
-
-	cout << "BF4 Loadout RNDMIZER by Prebzade" << endl;
-
-	RNDMIZER_Classes_Categories getClass( classes[4], pickedLoadout);
-	RNDMIZER_Classes_Categories getWeaponCategory(RNDMIZER_Classes_Categories assaultWeaponCategories[4], RNDMIZER_Classes_Categories engineerWeaponCategories[4], const string supportWeaponCategories[4], RNDMIZER_Classes_Categories reconWeaponCategories[4], RNDMIZER_Classes_Categories pickedLoadout);
-
+	string pickedLoadoutFinal;
+	RNDMIZER_Classes_Categories rndm;
 	
-	RNDMIZER_Classes_Categories getPickedLoadout();
+	
+	pickLoadout(rndm);
+	
 
+	/*
+	pickedLoadoutFinal = rndm.getPickedLoadout();
+	cout << "Dein Loadout: " << pickedLoadoutFinal << endl;
+	*/
 	return 0;
+}
+
+void pickLoadout(RNDMIZER_Classes_Categories rndm)
+{
+	string repeat;
+	do 
+	{
+		int switchItem = 0;
+		rndm.getClass();
+		rndm.getMainWeapon();
+		rndm.getSecondaryWeapon();
+		rndm.getGrenade();
+		rndm.getGadgets();
+
+		while (switchItem != 6)
+		{
+			system("cls");
+			cout << "BF4 Loadout RNDMIZER by Prebzade" << endl;
+			cout << " " << endl;
+
+			rndm.printPickedLoadout();
+			cout << " " << endl;
+			cout << "Do you want to reroll something?" << endl;
+			cout << "1 = Main Weapon Category" << "\t" << " 2 = Main Weapon Only " << "\t" << " 3 = Secondary" << endl;
+			cout << "4 = Grenade " << "\t" << " 5 = Gadgets" << "\t" << " 6 = Nothing" << endl;
+			cout << " " << endl;
+			cout << "Number: ";
+			cin >> switchItem;
+			while (switchItem < 1 && switchItem > 6)
+			{
+				cout << "Wrong input. Please use numbers shown above!" << endl;
+				cin >> switchItem;
+			}
+			if (switchItem > 0 && switchItem < 6)
+			{
+				switch (switchItem)
+				{
+				case 1: rndm.rerollItem(switchItem); rndm.printPickedLoadout(); break;
+				case 2: rndm.rerollItem(switchItem); rndm.printPickedLoadout(); break;
+				case 3: rndm.rerollItem(switchItem); rndm.printPickedLoadout(); break;
+				case 4: rndm.rerollItem(switchItem); rndm.printPickedLoadout(); break;
+				case 5: rndm.rerollItem(switchItem); rndm.printPickedLoadout(); break;
+				case 6: break;
+				default: break;
+				}
+			}
+		}
+		cout << "" << endl;
+			cout << "New Loadout ? (Y or N) ";
+			cin >> repeat;
+			while (!(repeat._Equal("Y") || repeat._Equal("y") || repeat._Equal("N") || repeat._Equal("n")))
+			{
+				cout << "Wrong input. Please use Y or N. Not case sensitive! " << endl;
+				cin >> repeat;
+			}
+	} while (repeat._Equal("Y") || repeat._Equal("y"));
+	
+	
 }
 
 /*
