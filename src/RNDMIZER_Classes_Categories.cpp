@@ -265,6 +265,7 @@ void RNDMIZER_Classes_Categories::getGadgets()
 	}
 }
 
+//Item Reroll
 void RNDMIZER_Classes_Categories::rerollItem(int switchItem)
 {
 	switch (switchItem)
@@ -377,7 +378,7 @@ void RNDMIZER_Classes_Categories::rerollItem(int switchItem)
 	}
 }
 
-//Random Number Generator
+//Random Number Generators
 int RNDMIZER_Classes_Categories::getRandomNumber(int arraySize)
 {
 	if (arraySize == 0) arraySize + 1;
@@ -388,7 +389,6 @@ int RNDMIZER_Classes_Categories::getRandomNumber(int arraySize)
 	return rndm(drg);
 	
 }
-
 int RNDMIZER_Classes_Categories::getRandomNumber(int minSize, int maxSize)
 {
 	//if (arraySize == 0) arraySize + 1;
@@ -399,7 +399,6 @@ int RNDMIZER_Classes_Categories::getRandomNumber(int minSize, int maxSize)
 	return rndm(drg);
 }
 
-//Test Class
 void RNDMIZER_Classes_Categories::printPickedLoadout()
 {
 	//cout << pickedClass << " \t " << pickedWeaponCategory << " \t " << pickedMainWeapon << " \t " << pickedSecondary << " \t " << pickedGrenade << " \ " << pickedGadgetSlot1 << " \t " << pickedGadgetSlot2 << endl;
@@ -412,15 +411,3 @@ void RNDMIZER_Classes_Categories::printPickedLoadout()
 	cout << "Gadget Two: " << pickedGadgetSlot2 << endl;
 	//Mutators missing
 }
-//Test Class
-void RNDMIZER_Classes_Categories::pickedLoadoutSpacer()
-{
-	pickedLoadout = (" ");
-}
-//Test Class
-string RNDMIZER_Classes_Categories::getPickedLoadout()
-{
-
-	return pickedLoadout;
-}
-//Test Class

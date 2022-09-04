@@ -1,7 +1,7 @@
 #include "RNDMIZER_Classes_Categories.h"
 #include <stdlib.h>
 
-void pickLoadout(RNDMIZER_Classes_Categories rndm);
+void pickLoadoutWithoutMutators(RNDMIZER_Classes_Categories rndm);
 void pickLoadoutWithMutators(RNDMIZER_Classes_Categories rndm);
 
 int main()
@@ -10,18 +10,11 @@ int main()
 	string pickedLoadoutFinal;
 	RNDMIZER_Classes_Categories rndm;
 	
-	
-	pickLoadout(rndm);
-	
-
-	/*
-	pickedLoadoutFinal = rndm.getPickedLoadout();
-	cout << "Dein Loadout: " << pickedLoadoutFinal << endl;
-	*/
+	pickLoadoutWithoutMutators(rndm);
 	return 0;
 }
 
-void pickLoadout(RNDMIZER_Classes_Categories rndm)
+void pickLoadoutWithoutMutators(RNDMIZER_Classes_Categories rndm)
 {
 	string repeat;
 	do 
@@ -40,6 +33,7 @@ void pickLoadout(RNDMIZER_Classes_Categories rndm)
 			cout << " " << endl;
 
 			rndm.printPickedLoadout();
+
 			cout << " " << endl;
 			cout << "Do you want to reroll something?" << endl;
 			cout << "1 = Main Weapon Category" << "\t" << " 2 = Main Weapon Only " << "\t" << " 3 = Secondary" << endl;
@@ -47,6 +41,7 @@ void pickLoadout(RNDMIZER_Classes_Categories rndm)
 			cout << " " << endl;
 			cout << "Number: ";
 			cin >> switchItem;
+
 			while (switchItem < 1 && switchItem > 6)
 			{
 				cout << "Wrong input. Please use numbers shown above!" << endl;

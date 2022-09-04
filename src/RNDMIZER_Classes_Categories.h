@@ -67,7 +67,5 @@ public:
 	int getRandomNumber(int arraySize);
 	int getRandomNumber(int minSize, int maxSize);
 	void printPickedLoadout();
-	void pickedLoadoutSpacer();
-	string getPickedLoadout();
 	void rerollItem(int switchItem);
 };
