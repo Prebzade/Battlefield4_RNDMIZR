@@ -29,7 +29,7 @@ int main()
 void pickLoadoutSoftcore(RNDMIZER_Classes_Categories rndm)
 {
 	string repeat;
-	int switchItem = 0;
+	int switchItem;
 
 	do
 	{
@@ -39,7 +39,7 @@ void pickLoadoutSoftcore(RNDMIZER_Classes_Categories rndm)
 		rndm.getGrenade();
 		rndm.getGadgets();
 		rndm.getFieldUpgrade();
-		switchItem;
+		switchItem = 0;
 
 		while (switchItem != 6)
 		{

@@ -49,7 +49,7 @@ protected:
 	string secondaryWeapons[17] = { "P226", "M9", "QSZ-92", "MP443", "SHORTY 12G", "G18", "FN57", "M1911", "93R", "CZ-75", ".44 MAgnum", "COMPACT 45", "M412 REX", "SW40", "UNICA 6", "DEAGLE 44", "MARES LEG" };
 	string carbine[13] = { "AK 5C", "ACWR", "SG553", "AKU-12", "A-91", "ACE 52 CQB", "G36C", "M4", "ACE 21 CQB", "TYPE-95B-1", "MTAR-21", "PHANTOM", "GROZA-1" };
 	string dmr[8] = { "RFB", "MK11 MOD 0", "SKS", "SVD-12", "QBU-88", "M39 EMR", "ACE 23 SV", "SCAR-H SV" };
-	string shotgun[9] = { "QBS-09", "870 MCS", "M1014", "HAWK 12G", "SAIGA 12K", "SPAS-12", "UTS 15", " SVB-12", "DAO-12" };
+	string shotgun[9] = { "QBS-09", "870 MCS", "M1014", "HAWK 12G", "SAIGA 12K", "SPAS-12", "UTS 15", "SVB-12", "DAO-12" };
 	string grenade[7] = { "M67 FRAG", "V40 MINI", "RGO IMPACT", "M34 INCINDIARY", "M18 SMOKE", "M84 FLASHBANG", "HAND FLARE" };
 
 	//Mutators
