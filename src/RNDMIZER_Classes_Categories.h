@@ -2,6 +2,8 @@
 #include <string>
 
 using namespace std;
+using std::cout;
+using std::cin;
 
 
 class RNDMIZER_Classes_Categories
