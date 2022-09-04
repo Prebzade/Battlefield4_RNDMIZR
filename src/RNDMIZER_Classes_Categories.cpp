@@ -7,10 +7,10 @@ void RNDMIZER_Classes_Categories::getClass()
 	switchClassChoice = getRandomNumber(size(classes));
 	switch(switchClassChoice)
 	{
-	case 0: pickedClass.append(classes[switchClassChoice]); break;
-	case 1: pickedClass.append(classes[switchClassChoice]); break;
-	case 2: pickedClass.append(classes[switchClassChoice]); break;
-	case 3: pickedClass.append(classes[switchClassChoice]); break;
+	case 0: pickedClass = (classes[switchClassChoice]); break;
+	case 1: pickedClass = (classes[switchClassChoice]); break;
+	case 2: pickedClass = (classes[switchClassChoice]); break;
+	case 3: pickedClass = (classes[switchClassChoice]); break;
 	default: cout << "Error during Class Selection" << endl; break;
 	}
 }
@@ -19,7 +19,7 @@ void RNDMIZER_Classes_Categories::getClass()
 void RNDMIZER_Classes_Categories::getMainWeapon()
 {
 	//Assault Main Weapon Selection
-	if (pickedClass._Equal("Assault"))
+	if /* (pickedClass._Equal("Assault")) */(pickedClass._Equal(classes[0]))
 	{
 		switchCategoryChoice = getRandomNumber(size(assaultWeaponCategories));
 		switch (switchCategoryChoice)
@@ -27,36 +27,36 @@ void RNDMIZER_Classes_Categories::getMainWeapon()
 		case 0: {
 				assaultWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(assaultRifles));
-				pickedWeaponCategory.append(assaultWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(assaultRifles[switchWeaponChoice]);break; 
+				pickedWeaponCategory = (assaultWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (assaultRifles[switchWeaponChoice]);break; 
 				}
 
 		case 1: {
 				assaultWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(carbine));
-				pickedWeaponCategory.append(assaultWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(carbine[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (assaultWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (carbine[switchWeaponChoice]); break; 
 				}
 
 		case 2: {
 				assaultWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(dmr));
-				pickedWeaponCategory.append(assaultWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(dmr[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (assaultWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (dmr[switchWeaponChoice]); break; 
 				}
 
 		case 3: {
 				assaultWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(shotgun));
-				pickedWeaponCategory.append(assaultWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(shotgun[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (assaultWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (shotgun[switchWeaponChoice]); break; 
 				}
 		default: cout << "Error during Assault Main Weapon Selection" << endl; break;
 		}
 	}
 
 	//Engineer Main Weapon Selection
-	else if (pickedClass._Equal("Engineer"))
+	else if (pickedClass._Equal(classes[1]))
 	{
 		switchCategoryChoice = getRandomNumber(size(engineerWeaponCategories));
 		switch (switchCategoryChoice)
@@ -64,36 +64,36 @@ void RNDMIZER_Classes_Categories::getMainWeapon()
 		case 0: {
 				engineerWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(pdw));
-				pickedWeaponCategory.append(engineerWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(pdw[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (engineerWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (pdw[switchWeaponChoice]); break; 
 				}
 
 		case 1: {
 				engineerWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(carbine));
-				pickedWeaponCategory.append(engineerWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(carbine[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (engineerWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (carbine[switchWeaponChoice]); break; 
 				}
 
 		case 2: {
 				engineerWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(dmr));
-				pickedWeaponCategory.append(engineerWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(dmr[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (engineerWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (dmr[switchWeaponChoice]); break; 
 				}
 
 		case 3: {
 				engineerWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(shotgun));
-				pickedWeaponCategory.append(engineerWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(shotgun[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (engineerWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (shotgun[switchWeaponChoice]); break; 
 				}
 		default: cout << "Error during Engineer Main Weapon Selection" << endl; break;
 		}
 	}
 
 	//Support Main Weapon Selection
-	else if (pickedClass._Equal("Support"))
+	else if (pickedClass._Equal(classes[2]))
 	{
 		switchCategoryChoice = getRandomNumber(size(supportWeaponCategories));
 		switch (switchCategoryChoice)
@@ -101,36 +101,36 @@ void RNDMIZER_Classes_Categories::getMainWeapon()
 		case 0: {
 				supportWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(lmg));
-				pickedWeaponCategory.append(supportWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(lmg[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (supportWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (lmg[switchWeaponChoice]); break; 
 				}
 
 		case 1: {
 				supportWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(carbine));
-				pickedWeaponCategory.append(supportWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(carbine[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (supportWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (carbine[switchWeaponChoice]); break; 
 				}
 
 		case 2: {
 				supportWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(dmr));
-				pickedWeaponCategory.append(supportWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(dmr[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (supportWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (dmr[switchWeaponChoice]); break; 
 				}
 
 		case 3: {
 				supportWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(shotgun));
-				pickedWeaponCategory.append(supportWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(shotgun[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (supportWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (shotgun[switchWeaponChoice]); break; 
 				}
 		default: cout << "Error during Support Main Weapon Selection" << endl; break;
 		}
 	}
 
 	//Recon Main Weapon Selection
-	else if (pickedClass._Equal("Recon"))
+	else if (pickedClass._Equal(classes[3]))
 	{
 	switchCategoryChoice = getRandomNumber(size(reconWeaponCategories));
 		switch (switchCategoryChoice)
@@ -138,29 +138,29 @@ void RNDMIZER_Classes_Categories::getMainWeapon()
 		case 0: {
 				reconWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(sniperRifle));
-				pickedWeaponCategory.append(reconWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(sniperRifle[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (reconWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (sniperRifle[switchWeaponChoice]); break; 
 				}
 
 		case 1: {
 				reconWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(carbine));
-				pickedWeaponCategory.append(reconWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(carbine[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (reconWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (carbine[switchWeaponChoice]); break; 
 				}
 
 		case 2: {
 				reconWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(dmr));
-				pickedWeaponCategory.append(reconWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(dmr[switchWeaponChoice]); break; 
+				pickedWeaponCategory = (reconWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (dmr[switchWeaponChoice]); break; 
 				}
 
 		case 3: {
 				reconWeaponCategories[switchCategoryChoice];
 				switchWeaponChoice = getRandomNumber(size(shotgun));
-				pickedWeaponCategory.append(reconWeaponCategories[switchCategoryChoice]);
-				pickedMainWeapon.append(shotgun[switchWeaponChoice]); break;
+				pickedWeaponCategory = (reconWeaponCategories[switchCategoryChoice]);
+				pickedMainWeapon = (shotgun[switchWeaponChoice]); break;
 				}
 		default: cout << "Error during Recon Main Weapon Selection" << endl; break;
 		}
@@ -171,24 +171,24 @@ void RNDMIZER_Classes_Categories::getMainWeapon()
 void RNDMIZER_Classes_Categories::getSecondaryWeapon() 
 {
 	secondaryChoice = getRandomNumber(size(secondaryWeapons));
-	pickedSecondary.append(secondaryWeapons[secondaryChoice]);
+	pickedSecondary = (secondaryWeapons[secondaryChoice]);
 }
 
 //Grenade Selection
 void RNDMIZER_Classes_Categories::getGrenade()
 {
 	grenadeChoice = getRandomNumber(size(grenade));
-	pickedGrenade.append(grenade[grenadeChoice]);
+	pickedGrenade = (grenade[grenadeChoice]);
 }
 
-//Field Upgrade Selection
+//Gadget Selection
 void RNDMIZER_Classes_Categories::getGadgets()
 {
-	if (pickedClass._Equal("Assault")) //Assault
+	if (pickedClass._Equal(classes[0])) //Assault
 	{
 		switchGadgetChoice1 = getRandomNumber(size(assaultGadget));
 		pickedGadgetSlot1 = assaultGadget[switchGadgetChoice1];
-		if (switchGadgetChoice1 < 10)
+		if (switchGadgetChoice1 <= 10)
 		{
 			switchGadgetChoice2 = getRandomNumber(10, 15);
 		}
@@ -205,11 +205,11 @@ void RNDMIZER_Classes_Categories::getGadgets()
 		pickedGadgetSlot2 = assaultGadget[switchGadgetChoice2];
 
 	}
-	else if (pickedClass._Equal("Engineer")) //Engineer
+	else if (pickedClass._Equal(classes[1])) //Engineer
 	{
 		switchGadgetChoice1 = getRandomNumber(size(engineerGadget));
 		pickedGadgetSlot1 = engineerGadget[switchGadgetChoice1];
-		if (switchGadgetChoice1 < 7)
+		if (switchGadgetChoice1 <= 7)
 		{
 			switchGadgetChoice2 = getRandomNumber(7, 14);
 		}
@@ -224,11 +224,11 @@ void RNDMIZER_Classes_Categories::getGadgets()
 		}
 		pickedGadgetSlot2 = engineerGadget[switchGadgetChoice2];
 	}
-	else if (pickedClass._Equal("Support")) //Support
+	else if (pickedClass._Equal(classes[2])) //Support
 	{
 		switchGadgetChoice1 = getRandomNumber(size(supportGadget));
 		pickedGadgetSlot1 = supportGadget[switchGadgetChoice1];
-		if (switchGadgetChoice1 < 3)
+		if (switchGadgetChoice1 <= 3)
 		{
 			switchGadgetChoice2 = getRandomNumber(3, 13);
 			pickedGadgetSlot2 = supportGadget[switchGadgetChoice2];
@@ -244,8 +244,7 @@ void RNDMIZER_Classes_Categories::getGadgets()
 		}
 		pickedGadgetSlot2 = supportGadget[switchGadgetChoice2];
 	}
-
-	else if (pickedClass._Equal("Recon")) //Recon
+	else if (pickedClass._Equal(classes[3])) //Recon
 	{
 		switchGadgetChoice1 = getRandomNumber(size(reconGadget));
 		pickedGadgetSlot1 = reconGadget[switchGadgetChoice1];
@@ -260,7 +259,122 @@ void RNDMIZER_Classes_Categories::getGadgets()
 		}
 		pickedGadgetSlot2 = reconGadget[switchGadgetChoice2];
 	}
+	else
+	{
+		cout << "Error during Gadget selection" << endl;
+	}
+}
 
+void RNDMIZER_Classes_Categories::rerollItem(int switchItem)
+{
+	switch (switchItem)
+	{
+	case 1: getMainWeapon(); break;
+	case 2:
+	{
+		//Assault Weapon Reroll
+		if (pickedClass._Equal(classes[0]))
+		{
+			if (pickedWeaponCategory._Equal(assaultWeaponCategories[0]))
+			{
+				switchWeaponChoice = getRandomNumber(size(assaultRifles));
+				pickedMainWeapon = assaultRifles[switchWeaponChoice];
+			}
+			if (pickedWeaponCategory._Equal(assaultWeaponCategories[1]))
+			{
+				switchWeaponChoice = getRandomNumber(size(carbine));
+				pickedMainWeapon = carbine[switchWeaponChoice];
+			}
+			if (pickedWeaponCategory._Equal(assaultWeaponCategories[2]))
+			{
+				switchWeaponChoice = getRandomNumber(size(dmr));
+				pickedMainWeapon = dmr[switchWeaponChoice];
+			}
+			if (pickedWeaponCategory._Equal(assaultWeaponCategories[3]))
+			{
+				switchWeaponChoice = getRandomNumber(size(shotgun));
+				pickedMainWeapon = shotgun[switchWeaponChoice];
+			}
+		}
+		//Engineer Weapon Reroll
+		else if (pickedClass._Equal(classes[1]))
+		{
+			if (pickedWeaponCategory._Equal(engineerWeaponCategories[0]))
+			{
+				switchWeaponChoice = getRandomNumber(size(pdw));
+				pickedMainWeapon = pdw[switchWeaponChoice];
+			}
+			if (pickedWeaponCategory._Equal(engineerWeaponCategories[1]))
+			{
+				switchWeaponChoice = getRandomNumber(size(carbine));
+				pickedMainWeapon = carbine[switchWeaponChoice];
+			}
+			if (pickedWeaponCategory._Equal(engineerWeaponCategories[2]))
+			{
+				switchWeaponChoice = getRandomNumber(size(dmr));
+				pickedMainWeapon = dmr[switchWeaponChoice];
+			}
+			if (pickedWeaponCategory._Equal(engineerWeaponCategories[3]))
+			{
+				switchWeaponChoice = getRandomNumber(size(shotgun));
+				pickedMainWeapon = shotgun[switchWeaponChoice];
+			}
+		}
+		//Support Weapon Reroll
+		else if (pickedClass._Equal(classes[2]))
+		{
+			if (pickedWeaponCategory._Equal(supportWeaponCategories[0]))
+			{
+				switchWeaponChoice = getRandomNumber(size(lmg));
+				pickedMainWeapon = lmg[switchWeaponChoice];
+			}
+			if (pickedWeaponCategory._Equal(supportWeaponCategories[1]))
+			{
+				switchWeaponChoice = getRandomNumber(size(carbine));
+				pickedMainWeapon = carbine[switchWeaponChoice];
+			}
+			if (pickedWeaponCategory._Equal(supportWeaponCategories[2]))
+			{
+				switchWeaponChoice = getRandomNumber(size(dmr));
+				pickedMainWeapon = dmr[switchWeaponChoice];
+			}
+			if (pickedWeaponCategory._Equal(supportWeaponCategories[3]))
+			{
+				switchWeaponChoice = getRandomNumber(size(shotgun));
+				pickedMainWeapon = shotgun[switchWeaponChoice];
+			}
+		}
+		// Recon Weapon Reroll
+		else if (pickedClass._Equal(classes[3]))
+		{
+			if (pickedWeaponCategory._Equal(reconWeaponCategories[0]))
+			{
+				switchWeaponChoice = getRandomNumber(size(sniperRifle));
+				pickedMainWeapon = sniperRifle[switchWeaponChoice];
+			}
+			if (pickedWeaponCategory._Equal(reconWeaponCategories[1]))
+			{
+				switchWeaponChoice = getRandomNumber(size(carbine));
+				pickedMainWeapon = carbine[switchWeaponChoice];
+			}
+			if (pickedWeaponCategory._Equal(reconWeaponCategories[2]))
+			{
+				switchWeaponChoice = getRandomNumber(size(dmr));
+				pickedMainWeapon = dmr[switchWeaponChoice];
+			}
+			if (pickedWeaponCategory._Equal(reconWeaponCategories[3]))
+			{
+				switchWeaponChoice = getRandomNumber(size(shotgun));
+				pickedMainWeapon = shotgun[switchWeaponChoice];
+			}
+		}
+		break;
+	}
+	case 3: getSecondaryWeapon();  break;
+	case 4: getGrenade(); break;
+	case 5: getGadgets(); break;
+	default: break;
+	}
 }
 
 //Random Number Generator
@@ -288,12 +402,20 @@ int RNDMIZER_Classes_Categories::getRandomNumber(int minSize, int maxSize)
 //Test Class
 void RNDMIZER_Classes_Categories::printPickedLoadout()
 {
-	cout << " | " << pickedClass << " | " << pickedWeaponCategory << " | " << pickedMainWeapon << " | " << pickedSecondary << " | " << pickedGrenade << " | " << pickedGadgetSlot1 << " | " << pickedGadgetSlot2;
+	//cout << pickedClass << " \t " << pickedWeaponCategory << " \t " << pickedMainWeapon << " \t " << pickedSecondary << " \t " << pickedGrenade << " \ " << pickedGadgetSlot1 << " \t " << pickedGadgetSlot2 << endl;
+	cout << "Class: " << pickedClass << endl; 
+	cout << "Main Weapon Category: " << pickedWeaponCategory << endl;
+	cout << "Main Weapon: " << pickedMainWeapon << endl; 
+	cout << "Secondary: " << pickedSecondary << endl;
+	cout << "Grenade: " << pickedGrenade << endl;
+	cout << "Gadget One: " << pickedGadgetSlot1 << endl; 
+	cout << "Gadget Two: " << pickedGadgetSlot2 << endl;
+	//Mutators missing
 }
 //Test Class
 void RNDMIZER_Classes_Categories::pickedLoadoutSpacer()
 {
-	pickedLoadout.append(" ");
+	pickedLoadout = (" ");
 }
 //Test Class
 string RNDMIZER_Classes_Categories::getPickedLoadout()
@@ -302,7 +424,3 @@ string RNDMIZER_Classes_Categories::getPickedLoadout()
 	return pickedLoadout;
 }
 //Test Class
-string RNDMIZER_Classes_Categories::getRerolledItem()
-{
-	return rerollItem;
-}
