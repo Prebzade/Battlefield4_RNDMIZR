@@ -2,13 +2,28 @@
 #include <stdlib.h>
 
 void pickDifficulty();
-void pickLoadoutSoftcore(RNDMIZER_Classes_Categories rndm);
-void pickLoadoutIntermediate(RNDMIZER_Classes_Categories rndm);
-void pickLoadoutHardcore(RNDMIZER_Classes_Categories rndm);
+void pickLoadoutSoftcore(RNDMIZER_Classes_Categories rndm, int difficulty);
+void pickLoadoutIntermediate(RNDMIZER_Classes_Categories rndm, int difficulty);
+void pickLoadoutHardcore(RNDMIZER_Classes_Categories rndm, int difficulty);
 
 int main()
 {
-	pickDifficulty();
+	string repeat;
+
+	do 
+	{
+		system("cls");
+		pickDifficulty();
+
+		cout << "Do you want to try another Difficulty? (Y/N): ";
+		cin >> repeat;
+		while (!(repeat._Equal("Y") || repeat._Equal("y") || repeat._Equal("N") || repeat._Equal("n")))
+		{
+			cout << "Wrong input. Please use Y or N. Not case sensitive! " << endl;
+			cin >> repeat;
+		}
+	} while (repeat._Equal("Y") || repeat._Equal("y"));
+	
 
 	return 0;
 }
@@ -25,14 +40,14 @@ void pickDifficulty()
 
 	switch (difficulty)
 	{
-	case 1: pickLoadoutSoftcore(rndm); break;
-	case 2: pickLoadoutIntermediate(rndm); break;
-	case 3: pickLoadoutHardcore(rndm); break;
+	case 1: pickLoadoutSoftcore(rndm, difficulty); break;
+	case 2: pickLoadoutIntermediate(rndm, difficulty); break;
+	case 3: pickLoadoutHardcore(rndm, difficulty); break;
 	default: break;
 	}
 }
 
-void pickLoadoutSoftcore(RNDMIZER_Classes_Categories rndm)
+void pickLoadoutSoftcore(RNDMIZER_Classes_Categories rndm, int difficulty)
 {
 	string repeat;
 	int switchItem;
@@ -53,7 +68,7 @@ void pickLoadoutSoftcore(RNDMIZER_Classes_Categories rndm)
 			cout << "BF4 Softcore Loadout RNDMIZER by Prebzade" << endl;
 			cout << " " << endl;
 
-			rndm.printPickedLoadout();
+			rndm.printPickedLoadout(difficulty);
 
 			cout << " " << endl;
 			cout << "Do you want to reroll something?" << endl;
@@ -72,11 +87,11 @@ void pickLoadoutSoftcore(RNDMIZER_Classes_Categories rndm)
 			{
 				switch (switchItem)
 				{
-				case 1: rndm.rerollItem(switchItem); rndm.printPickedLoadout(); break;
-				case 2: rndm.rerollItem(switchItem); rndm.printPickedLoadout(); break;
-				case 3: rndm.rerollItem(switchItem); rndm.printPickedLoadout(); break;
-				case 4: rndm.rerollItem(switchItem); rndm.printPickedLoadout(); break;
-				case 5: rndm.rerollItem(switchItem); rndm.printPickedLoadout(); break;
+				case 1: rndm.rerollItem(switchItem); rndm.printPickedLoadout(difficulty); break;
+				case 2: rndm.rerollItem(switchItem); rndm.printPickedLoadout(difficulty); break;
+				case 3: rndm.rerollItem(switchItem); rndm.printPickedLoadout(difficulty); break;
+				case 4: rndm.rerollItem(switchItem); rndm.printPickedLoadout(difficulty); break;
+				case 5: rndm.rerollItem(switchItem); rndm.printPickedLoadout(difficulty); break;
 				case 6: break;
 				default: break;
 				}
@@ -93,9 +108,8 @@ void pickLoadoutSoftcore(RNDMIZER_Classes_Categories rndm)
 	} while (repeat._Equal("Y") || repeat._Equal("y"));
 }
 
-void pickLoadoutIntermediate(RNDMIZER_Classes_Categories rndm)
+void pickLoadoutIntermediate(RNDMIZER_Classes_Categories rndm, int difficulty)
 {
-	int difficulty = 2;
 	string repeat;
 	int switchItem;
 
@@ -156,9 +170,8 @@ void pickLoadoutIntermediate(RNDMIZER_Classes_Categories rndm)
 	} while (repeat._Equal("Y") || repeat._Equal("y"));
 }
 
-void pickLoadoutHardcore(RNDMIZER_Classes_Categories rndm)
+void pickLoadoutHardcore(RNDMIZER_Classes_Categories rndm, int difficulty)
 {
-	int difficulty = 3;
 	string repeat;
 	int switchItem;
 
